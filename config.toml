@@ -1,0 +1,59 @@
+baseURL = "https://drohnen.johannes-olbrich.de/"
+languageCode = "de-de"
+defaultContentLanguage = "de"
+title = "Olbrich Luftbilder — Drohnenaufnahmen aus deiner Region"
+theme = "hello-friend"
+
+# Meta
+author = "Johannes Olbrich"
+copyright = "© 2026 Johannes Olbrich"
+description = "Professionelle Drohnenaufnahmen für Immobilien, Events und lokale Unternehmen."
+
+[params]
+  dateFormat = "02.01.2006"
+  description = "Luftbild- und Videoproduktion mit DJI Mini 3 Pro und Mavic 3 Pro."
+  keywords = ["Drohnenaufnahmen", "Luftbilder", "Immobilien", "Events", "FPV"]
+  defaultTheme = "dark"          # dunkler Modus passt perfekt zu Video-Hero
+  showThemeToggle = true
+  centeredLogo = false
+  mainSections = ["portfolio"]
+  enableTextSelection = true
+
+[params.author]
+  name = "Johannes Olbrich"
+  email = "hallo@johannes-olbrich.de"
+  city = "Region"
+
+[menu]
+  [[menu.main]]
+    name = "Start"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Portfolio"
+    url = "/portfolio/"
+    weight = 2
+  [[menu.main]]
+    name = "Leistungen"
+    url = "/leistungen/"
+    weight = 3
+  [[menu.main]]
+    name = "Über mich"
+    url = "/ueber-mich/"
+    weight = 4
+  [[menu.main]]
+    name = "Kontakt"
+    url = "/kontakt/"
+    weight = 5
+  [[menu.main]]
+    name = "Impressum"
+    url = "/impressum/"
+    weight = 99
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
