@@ -12,7 +12,8 @@ email = "hallo@johannes-olbrich.de"
 
 [params]
 author = "Johannes Olbrich"
-description = "Professionelle Drohnenaufnahmen für Immobilien, Events und lokale Unternehmen."
+description = "Professionelle Drohnenaufnahmen für Immobilien, Events und lokale Unternehmen. DJI Mavic 3 Pro und DJI Mini 3 Pro im Einsatz — kleine Aufträge, faire Preise, schnelle Lieferung."
+heroImage = "kirche-winter.jpg"
 dateFormat = "02.01.2006"
 paginationSinglePost = true
 style = "auto"

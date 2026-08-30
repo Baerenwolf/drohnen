@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{ $hero := false }}
+{{ with .Site.Params.heroImage }}
+  {{ $resource := resources.Get (printf "img/%s" .) }}
+  {{ if $resource }}
+    {{ $hero = $resource.RelPermalink }}
+  {{ end }}
+{{ end }}
+
+<section class="hero{{ if $hero }} hero-with-bg{{ end }}" {{ if $hero }}style="background-image: linear-gradient(rgba(15,17,21,0.55), rgba(15,17,21,0.75)), url('{{ $hero }}');"{{ end }}>
+  <h1>{{ .Site.Title }}</h1>
+  {{ with .Site.Params.description }}<p>{{ . }}</p>{{ end }}
+</section>
+
+{{ with .Content }}<div class="content">{{ . }}</div>{{ end }}
+{{ end }}
