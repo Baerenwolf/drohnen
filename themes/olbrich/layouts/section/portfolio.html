@@ -8,12 +8,25 @@
 {{ if $pages }}
   <div class="portfolio-grid">
     {{ range $pages }}
+      {{ $img := false }}
+      {{ with .Params.image }}
+        {{ $resource := resources.Get (printf "img/%s" .) }}
+        {{ if $resource }}
+          {{ $img = $resource }}
+        {{ end }}
+      {{ end }}
+
       <article class="portfolio-card">
         <a href="{{ .Permalink }}">
-          <div class="thumb">📹</div>
+          {{ if $img }}
+            <div class="thumb" style="background-image: url('{{ $img.RelPermalink }}');"></div>
+          {{ else }}
+            <div class="thumb">📹</div>
+          {{ end }}
           <div class="meta">
             <h3>{{ .Title }}</h3>
             <p>{{ with .Description }}{{ . }}{{ end }}</p>
+            {{ with .Params.location }}<p class="loc">📍 {{ . }}</p>{{ end }}
           </div>
         </a>
       </article>
